@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>No Reviews Found</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/css/bootstrap-select.min.css">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    
+    <div class="container">
+      <div class="page-header">
+        <h1> Sorry, no reviews found for that news site! </h1>
+        <h4> It appears that the news site you chose currently has no trending reviews. </h4>
+      </div>
+      
+      
+      <h5> Please select another news site: </h5>
+      <select class="selectpicker" name="site" form="siteform">
+        <option value="select">select</option>
+        <option value="ign">IGN</option>
+        <option value="polygon">Polygon</option>
+        <option value="techradar">TechRadar</option>
+        <option value="mashable">Mashable</option>
+        <option value="ew">Entertainment Weekly</option>
+      </select>
+      
+      <form method="POST" action="results" id="siteform">
+        <br>
+        <input class="btn btn-primary" type="submit" value="Submit">
+      </form>
+      
+      <nav aria-label="...">
+      <ul class="pager">
+        <li><a href="/">Home</a></li>
+      </ul>
+      </nav>
+      
+      
+      
+    </div>
+    
+    
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/bootstrap-select.min.js"></script>
+
+    <!-- (Optional) Latest compiled and minified JavaScript translation files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.4/js/i18n/defaults-*.min.js"></script>
+
+
+
+  </body>
+</html>
