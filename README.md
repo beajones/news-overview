@@ -1,4 +1,3 @@
 
 
-Web app drawing from NewsAPI to compile trending reviews from select entertainment 
-and technology news sites.
+Web app drawing from NewsAPI to aggregate trending news data.
