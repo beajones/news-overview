@@ -74,11 +74,13 @@ a {
 .left {
     background-color: #7c91b7;
     border-radius: 5px;
+    padding-bottom: 130px;
 }
 
 .left-center {
     background-color: #9098a8;
     border-radius: 5px;
+    padding-bottom: 130px;
 }
 
 .least-bias {
