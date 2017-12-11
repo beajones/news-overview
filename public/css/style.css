@@ -1,3 +1,15 @@
 body {
     background-color: #91b0e2;
 }
+
+.btn {
+    white-space: normal;
+    margin-bottom: 100px;
+}
+
+.bias-row {
+    background-color: grey;
+    text-align: center;
+}
+.bias-row h3 {
+}

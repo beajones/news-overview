@@ -3,19 +3,8 @@ require 'net/http'
 require 'json'
 require 'rubygems'
 
-# hash of news sources and their biases 
-# (based on information from mediabiasfactcheck.com)
-source_biases = {
-	"associated-press" => "least-biased",
-	"breitbart-news" => "strong-right",
-	"cnn" => "left",
-	"fox-news" => "right",
-	"msnbc" => "strong-left",
-	"the-new-york-times" => "left-center",
-	"the-wall-street-journal" => "right-center"
-}
 
-# get the top articles from news sources stored in hash
+# get the top articles from news sources stored as keys in a hash
 def get_articles(source_hash)
 	# make string of all the sources in hash
 	sources_string = ""
@@ -39,26 +28,26 @@ end
 # p get_articles(source_biases)
 
 
-# method to get headlines of articles
+# method to get headlines of articles from a certain source
 # INPUT: an array of article hashes as fetched from an API
 # OUTPUT: an array of the headlines of reviews
-def get_headlines(source_array)
-    #search through urls for review
+# def get_headlines(source_array)
+#     #search through urls for review
    
-   headline_array=[]
+#   headline_array=[]
    
-   source_array.each do |article_hash|
-      #get the url for each article
-      this_url = article_hash["url"]
-      #check to see if this article is a review
-      if this_url.end_with?("-review","review/") || this_url.include?("review-")
-          #find the review, return the hash for this article
-          article_array.push(article_hash)
-      end
-   end
-   #return the array of review article hashes
-   return headline_array
-end
+#   source_array.each do |article_hash|
+#       #get the url for each article
+#       this_url = article_hash["url"]
+#       #check to see if this article is a review
+#       if this_url.end_with?("-review","review/") || this_url.include?("review-")
+#           #find the review, return the hash for this article
+#           article_array.push(article_hash)
+#       end
+#   end
+#   #return the array of review article hashes
+#   return headline_array
+# end
 
 
 
