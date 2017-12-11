@@ -4,11 +4,11 @@ require 'json'
 require 'rubygems'
 
 
-# get the top articles from news sources stored as keys in a hash
+# get the top articles from news sources stored as values in a hash
 def get_articles(source_hash)
 	# make string of all the sources in hash
 	sources_string = ""
-	source_hash.each_key do |source| 
+	source_hash.each_value do |source| 
 		sources_string += "#{source},"
 	end
 

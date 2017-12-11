@@ -7,14 +7,16 @@ class MyApp < Sinatra::Base
     # define list of sources and their biases
     # (based on info from mediafactcheck.org)
     @source_biases = {
-	    "associated-press" => "least-biased",
-	    "breitbart-news" => "strong-right",
-	    "cnn" => "left",
-	    "fox-news" => "right",
-	    "msnbc" => "strong-left",
-	    "the-new-york-times" => "left-center",
-	    "the-wall-street-journal" => "right-center"
+      "strong-left" => "msnbc",
+      "left" => "cnn",
+      "left-center" => "the-new-york-times",
+	    "least-biased" => "associated-press",
+	    "right-center" => "the-wall-street-journal",
+	    "right" => "fox-news",
+	    "strong-right" => "breitbart-news" 
     }
+    
+    # get_articles returns an array of article hashes
     @articles = get_articles(@source_biases)
     erb :index
   end
