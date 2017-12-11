@@ -8,6 +8,10 @@ body {
     font-family: 'Roboto';
 }
 
+a {
+    color: #9986a8;
+}
+
 .jumbotron {
     background-color: #e2e2e2;
 }
