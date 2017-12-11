@@ -27,29 +27,35 @@ def get_articles(source_hash)
 	return article_data
 end
 
-# p get_articles(source_biases)
+# return result array with a certain number of articles per source
+def trim_article_data(source_hash, article_data, num_per_source)
+	# array to hold results
+	trimmed_array = []
+	i = 0
+	
+	source_hash.each_value.each do |source|
+		while i < num_per_source do
+			article_data.each do |article_hash|
+				if article_hash["source"]["id"] == source then
+					trimmed_array.push(article_hash)
+					i+= 1
+				end
+			end
+		end
+	end
 
+	return trimmed_array
+end
 
-# method to get headlines of articles from a certain source
-# INPUT: an array of article hashes as fetched from an API
-# OUTPUT: an array of the headlines of reviews
-# def get_headlines(source_array)
-#     #search through urls for review
-   
-#   headline_array=[]
-   
-#   source_array.each do |article_hash|
-#       #get the url for each article
-#       this_url = article_hash["url"]
-#       #check to see if this article is a review
-#       if this_url.end_with?("-review","review/") || this_url.include?("review-")
-#           #find the review, return the hash for this article
-#           article_array.push(article_hash)
-#       end
-#   end
-#   #return the array of review article hashes
-#   return headline_array
-# end
-
-
+@source_biases = {
+      "left" => ["cnn","msnbc"],
+      "left-center" => ["the-new-york-times","bbc-news"],
+	    "least-biased" => ["associated-press","reuters"],
+	    "right-center" => ["the-wall-street-journal","the-telegraph"],
+	    "right" => ["fox-news","breitbart-news"]
+    }
+@articles = get_articles(@source_biases)
+@trimmed_articles = trim_article_data(@source_biases, @articles, 5)
+puts @trimmed_articles.length
+p @trimmed_articles
 
