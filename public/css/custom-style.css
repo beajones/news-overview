@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700');
+@import url('https://fonts.googleapis.com/css?family=Sumana');
+
+body {
+    /*font-family: 'Roboto', sans-serif;*/
+    /*font-family: 'Sumana', serif;*/
+    background-color: white;
+    font-family: 'Roboto';
+}
+
+.jumbotron h1 {
+    font-family: 'Sumana', serif;
+    font-size: 85px;
+}
+
+.jumbotron h2 {
+    font-family: 'Sumana', serif;
+    font-size: 40px;
+}
+
+.btn {
+    white-space: normal;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.bias-row {
+    background-color: grey;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 20px;
+}
+
+.bias-row h3 {
+    font-style: bold;
+}
