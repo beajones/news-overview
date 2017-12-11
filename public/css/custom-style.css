@@ -13,6 +13,10 @@ a {
     color: #9177a5;
 }
 
+.btn .tn-img {
+    height: 60px;
+}
+
 .jumbotron {
     background-color: #eee;
 }
