@@ -31,9 +31,9 @@
             <h5>Click on a headline for more information, including news source,
                 author, and a link to the full article.</h5>
                 <br>
-            <h6> Currently showing news from: CNN, MSNBC, The New York Times, BBC News, 
+            <h6> Currently showing a sampling of top stories from: CNN, MSNBC, The New York Times, BBC News, 
                   The Associated Press, Reuters, The Wall Street Journal, The Telegraph, 
-                  Fox News, and Breitbart News. </h6>
+                  Fox News, Breitbart News. </h6>
             
                 
       </div>
@@ -44,7 +44,7 @@
         <div class="col-md-5">
           <div class="row">
             <!-- left -->
-            <div class="col-md-6">
+            <div class="col-md-6 left">
               <h3>Left</h3>
               <% @trimmed_articles.each do |article| %>
               <% @source_biases["left"].each do |source| %>
@@ -63,7 +63,7 @@
                 <% end %>
             </div>
             <!-- left center -->
-            <div class="col-md-6">
+            <div class="col-md-6 left-center">
               <h3>Left Center</h3>
               <% @trimmed_articles.each do |article| %>
               <% @source_biases["left-center"].each do |source| %>
@@ -86,7 +86,7 @@
         
         <!-- centermost of three columns -->
             <!-- least bias -->
-            <div class="col-md-2">
+            <div class="col-md-2 least-bias">
               <h3>Least Bias</h3>
               <% @trimmed_articles.each do |article| %>
               <% @source_biases["least-biased"].each do |source| %>
@@ -108,7 +108,7 @@
         <div class="col-md-5">
           <div class="row">
             <!-- right center -->
-            <div class="col-md-6">
+            <div class="col-md-6 right-center">
               <h3>Right Center</h3>
               <% @trimmed_articles.each do |article| %>
               <% @source_biases["right-center"].each do |source| %>
@@ -127,7 +127,7 @@
                 <% end %>
             </div>
             <!-- right -->
-            <div class="col-md-6" data-html="true">
+            <div class="col-md-6 right">
               <h3>Right</h3>
               <% @trimmed_articles.each do |article| %>
               <% @source_biases["right"].each do |source| %>
