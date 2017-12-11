@@ -8,6 +8,10 @@ body {
     font-family: 'Roboto';
 }
 
+.jumbotron {
+    background-color: #e2e2e2;
+}
+
 .jumbotron h1 {
     font-family: 'Sumana', serif;
     font-size: 85px;
@@ -27,12 +31,32 @@ body {
 
 .bias-row {
     background-color: grey;
+    
     text-align: center;
+    
+    border-radius: 5px;
+    
     padding-left: 10px;
     padding-right: 10px;
     padding-top: 20px;
+    margin-bottom: 20px;
 }
 
 .bias-row h3 {
     font-style: bold;
+}
+
+.footer {
+    text-align: center;
+    background-color: #e2e2e2;
+    
+    border-radius: 5px;
+    
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    
+    margin-top: 30px;
+    margin-bottom: -10px;
 }
