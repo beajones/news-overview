@@ -28,34 +28,32 @@ def get_articles(source_hash)
 end
 
 # return result array with a certain number of articles per source
+# INPUT: source_hash, a hash with arrays of source ids as values
+#		 article_data, an array of article hashes from news-api
+#		 num_per_source, a user-given argument for the number of articles to
+#						 include from each source (maximum 10, per API)
+# OUTPUT: a trimmed array of article hashes
 def trim_article_data(source_hash, article_data, num_per_source)
 	# array to hold results
 	trimmed_array = []
-	i = 0
 	
-	source_hash.each_value.each do |source|
-		while i < num_per_source do
+	# iterate through arrays of sources
+	source_hash.each_value do |source_array|
+		source_array.each do |source|
+			# initialize array to hold articles for each source
+			temp_array = []
+			# check for correct source and add to source's temp array
 			article_data.each do |article_hash|
 				if article_hash["source"]["id"] == source then
-					trimmed_array.push(article_hash)
-					i+= 1
+					temp_array.push(article_hash)
 				end
 			end
+			# sample number of articles per source as indicated
+			temp_array = temp_array.sample(num_per_source)
+			# append contents of temp_array onto result array
+			trimmed_array.concat(temp_array)
 		end
 	end
-
 	return trimmed_array
 end
-
-@source_biases = {
-      "left" => ["cnn","msnbc"],
-      "left-center" => ["the-new-york-times","bbc-news"],
-	    "least-biased" => ["associated-press","reuters"],
-	    "right-center" => ["the-wall-street-journal","the-telegraph"],
-	    "right" => ["fox-news","breitbart-news"]
-    }
-@articles = get_articles(@source_biases)
-@trimmed_articles = trim_article_data(@source_biases, @articles, 5)
-puts @trimmed_articles.length
-p @trimmed_articles
 
