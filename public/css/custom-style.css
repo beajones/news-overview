@@ -2,18 +2,19 @@
 @import url('https://fonts.googleapis.com/css?family=Sumana');
 
 body {
-    /*font-family: 'Roboto', sans-serif;*/
-    /*font-family: 'Sumana', serif;*/
     background-color: white;
+    background-image: url("../images/bg.png");
+    
     font-family: 'Roboto';
 }
 
+
 a {
-    color: #9986a8;
+    color: #9177a5;
 }
 
 .jumbotron {
-    background-color: #e2e2e2;
+    background-color: #eee;
 }
 
 .jumbotron h1 {
@@ -30,7 +31,7 @@ a {
     white-space: normal;
     margin-top: 15px;
     margin-bottom: 10px;
-    font-size: 12px;
+    font-size: 14px;
 }
 
 .bias-row {
@@ -52,7 +53,7 @@ a {
 
 .footer {
     text-align: center;
-    background-color: #e2e2e2;
+    background-color: #eee;
     
     border-radius: 5px;
     

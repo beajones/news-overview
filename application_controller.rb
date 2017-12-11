@@ -14,6 +14,7 @@ class MyApp < Sinatra::Base
 	    "right" => ["fox-news","breitbart-news"]
     }
     
+    
     # get_articles returns an array of article hashes
     @articles = get_articles(@source_biases)
     @trimmed_articles = trim_article_data(@source_biases, @articles, 5)

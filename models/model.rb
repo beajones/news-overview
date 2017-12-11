@@ -27,6 +27,7 @@ def get_articles(source_hash)
 	return article_data
 end
 
+
 # return result array with a certain number of articles per source
 # INPUT: source_hash, a hash with arrays of source ids as values
 #		 article_data, an array of article hashes from news-api
