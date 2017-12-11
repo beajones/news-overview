@@ -8,8 +8,10 @@ require 'rubygems'
 def get_articles(source_hash)
 	# make string of all the sources in hash
 	sources_string = ""
-	source_hash.each_value do |source| 
-		sources_string += "#{source},"
+	source_hash.each_value do |source_array|
+		source_array.each do |source|
+			sources_string += "#{source},"
+		end
 	end
 
 

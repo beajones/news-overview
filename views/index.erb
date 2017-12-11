@@ -30,138 +30,109 @@
                 <a href="https://mediabiasfactcheck.com/methodology/">Media Bias Fact Check.</a></h5>
                 
       </div>
-
-      <div class="row bias-row">
-        <!-- strong left -->
-        <div class="col-md-1">
-          <h3>Strong Left</h3>
-          <% @articles.each do |article| %>
-            <% if (article["source"]["id"] == @source_biases["strong-left"]) then %>
-                <button type="button" class="btn"  data-toggle="popover" data-placement="top" data-trigger="focus"
-                title="<%= article["source"]["name"] %> – <%=article["author"] %>" data-content="<%= article["description"]%>" >
-                <%= article["title"]%>
-                </button>
-                <br>
-                <% end %>
-            <% end %>
-        </div>
-        <!-- left -->
-        <div class="col-md-2">
-          <h3>Left</h3>
-          <% @articles.each do |article| %>
-            <% if (article["source"]["id"] == @source_biases["left"]) then %>
-                <button type="button" class="btn"  data-toggle="popover" data-placement="top" data-trigger="focus"
-                title="<%= article["source"]["name"] %> – <%=article["author"] %>" data-content="<%= article["description"]%>" >
-                <%= article["title"]%>
-                </button>
-                <br>
-                <% end %>
-            <% end %>
-        </div>
-        <!-- left center -->
-        <div class="col-md-2">
-          <h3>Left Center</h3>
-          <% @articles.each do |article| %>
-            <% if (article["source"]["id"] == @source_biases["left-center"]) then %>
-                <button type="button" class="btn"  data-toggle="popover" data-placement="top" data-trigger="focus"
-                title="<%= article["source"]["name"] %> – <%=article["author"] %>" data-content="<%= article["description"]%>" >
-                <%= article["title"]%>
-                </button>
-                <br>
-                <% end %>
-            <% end %>
-        </div>
-        <!-- least bias -->
-        <div class="col-md-2">
-          
-          <h3>Least Bias</h3>
-          <!-- ruby code -->
-          <% @articles.each do |article| %>
-            <% if (article["source"]["id"] == @source_biases["least-biased"]) then %>
-                <button type="button" class="btn"  data-toggle="popover" data-placement="top" data-trigger="focus"
-                title="<%= article["source"]["name"] %> – <%=article["author"] %>" data-content="<%= article["description"]%>" >
-                <%= article["title"]%>
-                </button>
-                <br>
-                <% end %>
-            <% end %>
-            
-        </div>
-        <!-- right center -->
-        <div class="col-md-2">
-          <h3>Right Center</h3>
-          <% @articles.each do |article| %>
-            <% if (article["source"]["id"] == @source_biases["right-center"]) then %>
-                <button type="button" class="btn"  data-toggle="popover" data-placement="top" data-trigger="focus"
-                title="<%= article["source"]["name"] %> – <%=article["author"] %>" data-content="<%= article["description"]%>" >
-                <%= article["title"]%>
-                </button>
-                <br>
-                <% end %>
-            <% end %>
-        </div>
-        <!-- right -->
-        <div class="col-md-2">
-          <h3>Right</h3>
-          <% @articles.each do |article| %>
-            <% if (article["source"]["id"] == @source_biases["right"]) then %>
-                <button type="button" class="btn"  data-toggle="popover" data-placement="top" data-trigger="focus"
-                title="<%= article["source"]["name"] %> – <%=article["author"] %>" data-content="<%= article["description"]%>" >
-                <%= article["title"]%>
-                </button>
-                <br>
-                <% end %>
-            <% end %>
-        </div>
-        <!-- strong right -->
-        <div class="col-md-1">
-          <h3>Strong Right</h3>
-          <% @articles.each do |article| %>
-            <% if (article["source"]["id"] == @source_biases["strong-right"]) then %>
-                <button type="button" class="btn"  data-toggle="popover" data-placement="top" data-trigger="focus"
-                title="<%= article["source"]["name"] %> – <%=article["author"] %>" data-content="<%= article["description"]%>" >
-                <%= article["title"]%>
-                </button>
-                <br>
-                <% end %>
-            <% end %>
-        </div>
-      </div>
-
-
-
-      
-
-
-
-
-
-
-
-
-
- <!--      <h5> Please select a news site: </h5>
-      <select class="selectpicker" name="site" form="siteform">
-        <option value="select">select</option>
-        <option value="ign">IGN</option>
-        <option value="polygon">Polygon</option>
-        <option value="techradar">TechRadar</option>
-        <option value="mashable">Mashable</option>
-        <option value="ew">Entertainment Weekly</option>
-      </select>
-      
-      
-      <form method="POST" action="results" id="siteform"> -->
-
-        <!--<input type="submit" value="Submit">-->
-     <!--    <br>
-        <input class="btn btn-primary" type="submit" value="Submit">
-      </form> -->
-
-    
-
     </div>
-    
+    <div class="container">
+      <div class="row bias-row">
+        <!-- leftmost of three columns -->
+        <div class="col-md-5">
+          <div class="row">
+            <!-- left -->
+            <div class="col-md-6">
+              <h3>Left</h3>
+              <% @articles.each do |article| %>
+              <% @source_biases["left"].each do |source| %>
+                <% if (article["source"]["id"] == source) then %>
+                    <button type="button" class="btn"  data-toggle="popover" 
+                    data-placement="top" data-trigger="focus" data-html="true"
+                    title="<a href='<%=article["url"]%>'><%= article["source"]["name"]%></a> – Author: <%=article["author"] %>" 
+                    data-content="<%= article["description"]%>" >
+                      <%= article["title"]%>
+                    </button>
+                    <br>
+                    <% end %>
+                  <% end%>
+                <% end %>
+            </div>
+            <!-- left center -->
+            <div class="col-md-6">
+              <h3>Left Center</h3>
+              <% @articles.each do |article| %>
+              <% @source_biases["left-center"].each do |source| %>
+                <% if (article["source"]["id"] == source) then %>
+                    <button type="button" class="btn"  data-toggle="popover" 
+                    data-placement="top" data-trigger="focus" data-html="true"
+                    title="<a href='<%=article["url"]%>'><%= article["source"]["name"]%></a> – Author: <%=article["author"] %>" 
+                    data-content="<%= article["description"]%>" >
+                      <%= article["title"]%>
+                    </button>
+                    <br>
+                    <% end %>
+                  <% end%>
+                <% end %>
+                </div>
+          </div>
+        </div>
+        
+        <!-- centermost of three columns -->
+            <!-- least bias -->
+            <div class="col-md-2">
+              <h3>Least Bias</h3>
+              <% @articles.each do |article| %>
+              <% @source_biases["least-biased"].each do |source| %>
+                <% if (article["source"]["id"] == source) then %>
+                    <button type="button" class="btn"  data-toggle="popover" 
+                    data-placement="top" data-trigger="focus" data-html="true"
+                    title="<a href='<%=article["url"]%>'><%= article["source"]["name"]%></a> – Author: <%=article["author"] %>" 
+                    data-content="<%= article["description"]%>" >
+                      <%= article["title"]%>
+                    </button>
+                    <br>
+                    <% end %>
+                  <% end%>
+                <% end %>
+            </div>
+      <!-- rightmost of three columns -->
+        <div class="col-md-5">
+          <div class="row">
+            <!-- right center -->
+            <div class="col-md-6">
+              <h3>Right Center</h3>
+              <% @articles.each do |article| %>
+              <% @source_biases["right-center"].each do |source| %>
+                <% if (article["source"]["id"] == source) then %>
+                    <button type="button" class="btn"  data-toggle="popover" 
+                    data-placement="top" data-trigger="focus" data-html="true"
+                    title="<a href='<%=article["url"]%>'><%= article["source"]["name"]%></a> – Author: <%=article["author"] %>" 
+                    data-content="<%= article["description"]%>" >
+                      <%= article["title"]%>
+                    </button>
+                    <br>
+                    <% end %>
+                  <% end%>
+                <% end %>
+            </div>
+            <!-- right -->
+            <div class="col-md-6" data-html="true">
+              <h3>Right</h3>
+              <% @articles.each do |article| %>
+              <% @source_biases["right"].each do |source| %>
+                <% if (article["source"]["id"] == source) then %>
+                    <button type="button" class="btn"  data-toggle="popover" 
+                    data-placement="top" data-trigger="focus" data-html="true"
+                    title="<a href='<%=article["url"]%>'><%= article["source"]["name"]%></a> – Author: <%=article["author"] %>" 
+                    data-content="<%= article["description"]%>" >
+                      <%= article["title"]%>
+                    </button>
+                    <br>
+                    <% end %>
+                  <% end%>
+                <% end %>
+            </div>
+        </div>
+        </div>
+        
+      </div> <!-- end bias-row -->
+    </div> <!-- end container -->
     
 
 
