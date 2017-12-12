@@ -35,6 +35,64 @@
                   The Associated Press, Reuters, The Wall Street Journal, The Telegraph, 
                   Fox News, Breitbart News. </h6>
             
+            
+                        <!-- Button trigger modal -->
+            <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalLong">
+              More About News Overview
+            </button>
+            
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">About News Overview</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <p>As a computer scientist, I find that one of the most striking aspects of the discussion surrounding the current state of online news media 
+                    (and, thus, where I decided to begin contemplating a solution) lies in the design of the social media platforms themselves. As most social 
+                    media applications were initially created for a user to connect and share personal content with their friends, the expansion of their scope 
+                    to include a much broader exchange of information, while admittedly a natural-seeming progression, often feels as though it has reached a 
+                    scale beyond what the structure of those applications is suited to deliver. This often takes the form of social media platforms having many 
+                    add-on features that don’t necessarily serve their central purpose, leaving the user experience feeling disjointed. </p>
+                    <p>Furthermore, the 
+                    contextual intermingling of so many varying types of content can be confusing – I know I have had moments where I jump right from messaging 
+                    with my sister to viewing a short list-article about beauty products to seeing an announcement of a mass shooting occurrence. Not only does 
+                    this sort of content-hopping do a disservice to anyone trying to use an application for a single purpose without being distracted, but it 
+                    also has a detrimental effect on the informational value of the content one consumes when serious topics end up stripped of gravity, urgency,
+                    or other related subject matter that could be beneficial to understanding the issue at hand. Furthermore, the personalized nature of these 
+                    social media platforms persists even as their informational scope expands, leading to an echo-chamber-like phenomenon where the content 
+                    that an application’s algorithms deliver to you often originates from sources with which you are more likely to already agree. Because of 
+                    this, it becomes difficult to gain a broad, multi-faceted overview of current events from any existing platform. </p>
+	                  <p>With all of this in mind, I thought about what features in a website would make for a more useful online news consumption experience. 
+	                  First, I identified a core functionality that I felt was not being met by current applications: a way to see a non-user-targeted overview 
+	                  of daily news events that also gives context to the sources presenting those stories. The closest I had found to this experience was the 
+	                  Google News page; however, I often felt that its interface emphasized the headlines rather than the sources, making it difficult to evaluate 
+	                  the reliability of the information being presented to me. In my research, I came across the website for Media Fact Check Bias which aims to 
+	                  provide a ranking of where a particular news source falls across the political spectrum. Utilizing this information, I created News Overview, 
+	                  a website that pulls a sampling of trending articles from a variety of news outlets in real time and displays their headlines according to 
+	                  their sources’ potential political bias. More information, including the name of the author and a link to the article itself, appears when 
+	                  you click each headline. With this interface, I wanted to provide a way to quickly get an aggregate view of current news as well as a way to 
+	                   compare how events are being reported by sources with differing political positions.</p>
+	                  <p>While I feel that News Overview serves its original purpose of providing a contextualized glance at daily happenings, since it is a small 
+	                  application created as a proof-of-concept, there are many ways it could be improved. One small method of expansion would be to include the 
+	                  “Factual Reporting” ratings from Media Bias Fact Check somewhere in the interface to give further meaning to which news outlet reported a 
+	                  certain article. On a related note, in an ideal world, I would be able to gather my own information concerning the potential political biases 
+	                  of a news source rather than relying on an outside source that itself requires evaluation for accuracy. Another potentially beneficial change 
+	                  would be to increase the number of news sources from which articles are drawn and implement a system for sorting which articles are shown 
+	                  based on a factor such as most recent time of writing. However, with any changes and expansions, I would want the overarching goal of a clear, 
+	                  non-personalized way to attain and compare news information to remain at the forefront.</p>
+
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
                 
       </div>
     </div>
@@ -189,7 +247,12 @@
       })
     </script>
     
-
+    <!-- script for modal -->
+    <script>
+      $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+      })
+    </script>
 
   </body>
 </html>
