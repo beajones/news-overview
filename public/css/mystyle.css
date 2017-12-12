@@ -9,6 +9,7 @@ body {
 }
 
 
+
 a {
     color: #9177a5;
 }
@@ -97,4 +98,12 @@ a {
 .right {
     background-color: #ad6b6b;
     border-radius: 5px;
+}
+
+#modalTitle{
+    font-family: 'Sumana', serif;
+}
+
+.modal-body{
+    font-family: 'Roboto';
 }
